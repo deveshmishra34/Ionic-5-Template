@@ -1,5 +1,7 @@
 {
   "name": "Ionic Template",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
