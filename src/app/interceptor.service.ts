@@ -4,30 +4,29 @@ import {Observable} from 'rxjs';
 import {GlobalService} from './providers/global-service/global.service';
 import {finalize, tap} from 'rxjs/operators';
 import {StorageService} from './providers/storage/storage.service';
-import {AuthService} from './providers/auth-service/auth-service.service';
 import {Router} from '@angular/router';
 import {Platform} from '@ionic/angular';
+import {AuthService} from './providers/auth-service/auth-service.service';
+import {ShowErrorService} from './providers/show-error/show-error.service';
 
 @Injectable()
 export class InterceptorService implements HttpInterceptor {
 
     authToken: string;
-    platForm: any;
-    cfPlatforms: any;
+
     constructor(
-        private _globalService: GlobalService,
-        private _storageService: StorageService,
+        private globalService: GlobalService,
+        private storageService: StorageService,
+        private showErrorService: ShowErrorService,
         private authService: AuthService,
         private router: Router,
         private platform: Platform
     ) {
-        this.platForm = this.platform;
-        this.cfPlatforms = this._globalService.currentPlatform;
     }
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        this.authToken = this._globalService.accessToken;
+        this.authToken = this.globalService.accessToken;
 
         const started = Date.now();
         let ok: string;
@@ -39,16 +38,6 @@ export class InterceptorService implements HttpInterceptor {
             }
         });
 
-
-        // const intervalTimeout = setInterval(() => {
-        //     const timeTaken = (Date.now() - started) / 1000;
-        //     if (timeTaken > 2) {
-        //         this.loaderService.loadData('Please wait...');
-        //         clearInterval(intervalTimeout);
-        //     }
-        //     console.log('Interceptor interval');
-        // }, 100);
-
         return next.handle(authReq).pipe(
             tap(
                 // Succeeds when there is a response; ignore other events
@@ -58,7 +47,7 @@ export class InterceptorService implements HttpInterceptor {
                     ok = error.status + 'failed';
                     if (error.status === 401) {
                         this.logoutUser();
-                        // this._globalService.logoutUser();
+                        // this.globalService.logoutUser();
                     }
                 }
             ),
@@ -68,30 +57,23 @@ export class InterceptorService implements HttpInterceptor {
                 const msg = `${req.method} "${req.urlWithParams}"
              ${ok} in ${elapsed} ms.`;
                 // console.log(msg);
-                // this.loaderService.unloadData('Please wait...');
-                // if (intervalTimeout) {
-                //     clearInterval(intervalTimeout);
-                // }
             })
         );
     }
 
-    logoutUser() {
-        this._storageService.getDeviceId().then(
-            deviceId => {
-                this._globalService.isLoggedIn = false;
-                this._storageService.clear();
-                this._globalService.setUserMenuDisabled(true);
-                if ((this.cfPlatforms.indexOf('cordova') > -1)) {
-                    this.router.navigate(['/intro']);
-                } else {
-                    this.router.navigate(['/landing-page']);
-                }
-                if (deviceId) {
-                    this.authService.logoutUser(deviceId).subscribe();
-                }
+    async logoutUser() {
+        this.globalService.isLoggedIn = false;
+        this.storageService.clear();
+        this.globalService.setUserMenuDisabled(true);
+        this.router.navigate(['/login']);
+        const deviceId = await this.storageService.getDeviceId();
+        if (deviceId) {
+            try {
+                await this.authService.logoutUser(deviceId).toPromise();
+            } catch (e) {
+                this.showErrorService.showError(e);
             }
-        );
+        }
     }
 
 }

@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {environment} from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AppUrlService {
 
-  constructor() { }
+    constructor() {
+    }
 
     public get APP_URL_V1() {
         return environment.BASE_URL_V1;
@@ -22,5 +23,17 @@ export class AppUrlService {
 
     public get GOOGLE_URL() {
         return 'https://www.googleapis.com/';
+    }
+
+    public get SELF() {
+        return this.APP_URL_V1 + `users/self`;
+    }
+
+    public get LOGIN() {
+        return this.APP_URL_V1 + 'oauth/token';
+    }
+
+    public get LOGOUT() {
+        return this.APP_URL_V1 + 'oauth/logout';
     }
 }

@@ -63,5 +63,11 @@ export class StorageService {
     getLocalData(key) {
         return localStorage.getItem(key);
     }
+
+    async clear() {
+        localStorage.clear();
+        this.storage.clear().then();
+        localStorage.removeItem(this.TOKEN);
+    }
 }
 

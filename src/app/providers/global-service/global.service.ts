@@ -8,9 +8,10 @@ import {AppUrlService} from '../../constants/app-url-service/app-url-service.ser
     providedIn: 'root'
 })
 export class GlobalService {
-    public isLoggedIn = false;
+    public isLoggedIn: boolean;
     public redirectUrl: string;
     public accessToken: string;
+    public isOfflineMode: boolean;
 
 
     private user$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
@@ -24,6 +25,9 @@ export class GlobalService {
         private alertController: AlertController,
         private storageService: StorageService,
     ) {
+        this.isLoggedIn = false;
+        this.isOfflineMode = false;
+
         this.getUserToken();
     }
 
