@@ -3,6 +3,8 @@ import {AlertController, ToastController} from '@ionic/angular';
 import {BehaviorSubject} from 'rxjs';
 import {StorageService} from '../storage/storage.service';
 import {AppUrlService} from '../../constants/app-url-service/app-url-service.service';
+import {Network, NetworkStatus} from '@capacitor/core';
+import {AppPluginService} from '../../plugins/app-plugin/app-plugin.service';
 
 @Injectable({
     providedIn: 'root'
@@ -11,6 +13,7 @@ export class GlobalService {
     public isLoggedIn: boolean;
     public redirectUrl: string;
     public accessToken: string;
+    public networkInfo: NetworkStatus;
     public isOfflineMode: boolean;
 
 
@@ -20,15 +23,25 @@ export class GlobalService {
 
 
     constructor(
+        private appPluginService: AppPluginService,
         private appUrl: AppUrlService,
         private toastController: ToastController,
         private alertController: AlertController,
-        private storageService: StorageService,
+        private storageService: StorageService
     ) {
         this.isLoggedIn = false;
         this.isOfflineMode = false;
 
         this.getUserToken();
+        this.addNetworkStatedListener();
+    }
+
+    async addNetworkStatedListener() {
+        this.networkInfo = await Network.getStatus();
+        console.log('addNetworkStatedListener: ', this.networkInfo);
+        Network.addListener('networkStatusChange', (status) => {
+            console.log('Network status changed', status);
+        });
     }
 
     getUserToken() {

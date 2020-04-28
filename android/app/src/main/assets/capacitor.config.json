@@ -1,1 +1,13 @@
-{}
+{
+  "appId": "io.ionic.starter",
+  "appName": "Ionic Template",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": true
+    }
+  }
+}

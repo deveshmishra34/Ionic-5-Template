@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage';
+import {StoragePluginService} from '../../plugins/storage-plugin/storage-plugin.service';
 
 @Injectable({
     providedIn: 'root'
@@ -10,16 +11,17 @@ export class StorageService {
     private USER = 'user';
     private DEVICE_ID: 'device_id';
     constructor(
-        private storage: Storage
+        private storage: Storage,
+        private storagePluginService: StoragePluginService
     ) {
     }
 
     setUserToken(token: string) {
-        return localStorage.setItem(this.TOKEN, token);
+        return this.storagePluginService.set(this.TOKEN, token);
     }
 
     getUserToken() {
-        return localStorage.getItem(this.TOKEN);
+        return this.storagePluginService.get(this.TOKEN);
     }
 
     setUser(user) {
@@ -65,9 +67,9 @@ export class StorageService {
     }
 
     async clear() {
+        this.storagePluginService.clear();
         localStorage.clear();
-        this.storage.clear().then();
-        localStorage.removeItem(this.TOKEN);
+        this.storage.clear();
     }
 }
 
