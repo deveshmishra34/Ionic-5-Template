@@ -3,10 +3,8 @@ import {Component, OnDestroy} from '@angular/core';
 import {Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
-import {AppPluginService} from './plugins/app-plugin/app-plugin.service';
-import {Plugins} from '@capacitor/core';
 import {GlobalService} from './providers/global-service/global.service';
-const {App} = Plugins;
+import {AppPluginService} from './plugins/app-plugin/app-plugin.service';
 
 @Component({
     selector: 'app-root',
@@ -15,15 +13,14 @@ const {App} = Plugins;
 })
 export class AppComponent implements OnDestroy {
 
-    lastTimeBackPress = 0;
-    timePeriodToExit = 2000;
-    isUserMenuDisabled = false;
+    mainMenuDisabled = true;
 
     constructor(
         private platform: Platform,
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
-        private globalService: GlobalService
+        private appPluginService: AppPluginService,
+        private globalService: GlobalService,
     ) {
         this.initializeApp();
     }
@@ -32,9 +29,35 @@ export class AppComponent implements OnDestroy {
         this.platform.ready().then(() => {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
+            this.globalService.addNetworkStatedListener();
+            this.listenForUserMenu();
+            this.listerForTokenChange();
+            this.appPluginService.backButtonListener();
         });
     }
 
     ngOnDestroy() {
+    }
+
+    async listerForTokenChange() {
+        this.globalService.getAccessToken().subscribe(
+            token => {
+                if (token) {
+                    console.log('User is logged in', token);
+                } else {
+                    console.log('User is not logged in');
+                }
+            }
+        );
+    }
+
+    async listenForUserMenu() {
+        this.globalService.getUserMenu().subscribe(
+            userMenu => {
+                if (typeof userMenu === 'boolean') {
+                    this.mainMenuDisabled = userMenu;
+                }
+            }
+        );
     }
 }

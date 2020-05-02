@@ -3,6 +3,7 @@ import {DevicePluginService} from '../../plugins/device-plugin/device-plugin.ser
 import {ActionSheetOptionStyle, Modals} from '@capacitor/core';
 import {StatusBarPluginService} from '../../plugins/status-bar-plugin/status-bar-plugin.service';
 import {SharePluginService} from '../../plugins/share-plugin/share-plugin.service';
+import {GlobalService} from '../../providers/global-service/global.service';
 
 @Component({
     selector: 'app-tab1',
@@ -15,7 +16,8 @@ export class Tab1Page {
     constructor(
         private devicePluginService: DevicePluginService,
         private statusBarPluginService: StatusBarPluginService,
-        private sharePluginService: SharePluginService
+        private sharePluginService: SharePluginService,
+        private globalService: GlobalService
     ) {
     }
 
@@ -63,5 +65,18 @@ export class Tab1Page {
             url: 'http://ionicframework.com/',
             dialogTitle: 'Share with buddies'
         });
+    }
+
+    async setToken() {
+        try {
+            const resp = await this.globalService.setAccessToken('0234567890');
+            console.log('resp: ', resp);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    async removeToken() {
+        this.globalService.logout();
     }
 }

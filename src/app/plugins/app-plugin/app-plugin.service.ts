@@ -1,5 +1,14 @@
 import {Injectable} from '@angular/core';
 import {AppState, AppUrlOpen, Plugins} from '@capacitor/core';
+import {
+    ActionSheetController,
+    AlertController,
+    LoadingController,
+    MenuController,
+    ModalController,
+    PopoverController
+} from '@ionic/angular';
+import {GlobalService} from '../../providers/global-service/global.service';
 
 const {App} = Plugins;
 
@@ -8,10 +17,18 @@ const {App} = Plugins;
 })
 export class AppPluginService {
 
-    constructor() {
-        this.appStateChangeListener();
-        this.backButtonListener();
-        this.getLaunchUrl();
+    lastTimeBackPress = 0;
+    timePeriodToExit = 2000;
+
+    constructor(
+        private menuController: MenuController,
+        private actionSheetController: ActionSheetController,
+        private alertController: AlertController,
+        private popoverController: PopoverController,
+        private modalController: ModalController,
+        private loadingController: LoadingController,
+        private globalService: GlobalService
+    ) {
     }
 
     async getLaunchUrl() {
@@ -27,10 +44,59 @@ export class AppPluginService {
     }
 
     async backButtonListener() {
-        App.addListener('backButton', (data: AppUrlOpen) => {
-            // state.isActive contains the active state
+        App.addListener('backButton', async (data: AppUrlOpen) => {
             console.log('App backButton', data);
-            App.exitApp();
+
+            const menu = await this.menuController.getOpen();
+            if (menu) {
+                await menu.close();
+                return {};
+            }
+
+            const actionSheet = await this.actionSheetController.getTop();
+            if (actionSheet) {
+                await actionSheet.dismiss();
+                return {};
+            }
+
+            const popover = await this.popoverController.getTop();
+            if (popover) {
+                await popover.dismiss();
+                return {};
+            }
+
+
+            const modal = await this.modalController.getTop();
+            if (modal) {
+                await modal.dismiss();
+                return {};
+            }
+
+            const loader = await this.loadingController.getTop();
+            if (loader) {
+                await loader.dismiss();
+                return {};
+            }
+
+            const alert = await this.alertController.getTop();
+            if (alert) {
+                await alert.dismiss();
+                return {};
+            }
+
+
+            // if (this.ionRouterOutlet.canGoBack()) {
+            //     this.ionRouterOutlet.pop();
+            // } else {
+                if (new Date().getTime() - this.lastTimeBackPress < this.timePeriodToExit) {
+                    App.exitApp();
+
+                } else {
+                    this.globalService.showMessage('toast', {message: 'Press back again to exit App.'});
+                    this.lastTimeBackPress = new Date().getTime();
+                }
+            // }
+
         });
     }
 }

@@ -23,7 +23,6 @@ export class GlobalService {
 
 
     constructor(
-        private appPluginService: AppPluginService,
         private appUrl: AppUrlService,
         private toastController: ToastController,
         private alertController: AlertController,
@@ -33,7 +32,6 @@ export class GlobalService {
         this.isOfflineMode = false;
 
         this.getUserToken();
-        this.addNetworkStatedListener();
     }
 
     async addNetworkStatedListener() {
@@ -50,24 +48,32 @@ export class GlobalService {
         if (token) {
             this.isLoggedIn = true;
             this.setAccessToken(token);
+            this.setUserMenuDisabled(false);
         } else {
             this.isLoggedIn = false;
+            this.setUserMenuDisabled(true);
         }
     }
 
-    setAccessToken(token) {
+    async setAccessToken(token) {
         this.isLoggedIn = true;
         this.accessToken = token;
         this.accessToken$.next(token);
-        this.storageService.setUserToken(token);
-        return;
+        this.setUserMenuDisabled(false);
+        return this.storageService.setUserToken(token);
     }
 
     getAccessToken() {
         return this.accessToken$;
     }
 
-    setUser(user) {
+    async logout() {
+        this.isLoggedIn = false;
+        this.setUserMenuDisabled(true);
+        this.storageService.clear();
+    }
+
+    async setUser(user) {
         this.user$.next(user);
         return this.storageService.setUser(user);
     }
@@ -80,12 +86,12 @@ export class GlobalService {
         return this.isUserMenuDisabled$;
     }
 
-    setUserMenuDisabled(value) {
+    async setUserMenuDisabled(value) {
         this.isUserMenuDisabled$.next(value);
     }
 
 
-    showMessage(type, data) {
+    async showMessage(type, data) {
         switch (type.toLowerCase()) {
             case 'alert' :
                 this.presentAlert(data);
