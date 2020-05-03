@@ -4,6 +4,7 @@ import {BehaviorSubject} from 'rxjs';
 import {StorageService} from '../storage/storage.service';
 import {AppUrlService} from '../../constants/app-url-service/app-url-service.service';
 import {Network, NetworkStatus} from '@capacitor/core';
+import {Router} from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
@@ -25,7 +26,8 @@ export class GlobalService {
         private appUrl: AppUrlService,
         private toastController: ToastController,
         private alertController: AlertController,
-        private storageService: StorageService
+        private storageService: StorageService,
+        private router: Router
     ) {
         this.isLoggedIn = false;
         this.isOfflineMode = false;
@@ -70,6 +72,7 @@ export class GlobalService {
         this.isLoggedIn = false;
         this.setUserMenuDisabled(true);
         this.storageService.clear();
+        this.router.navigate(['/introduction']);
     }
 
     async setUser(user) {

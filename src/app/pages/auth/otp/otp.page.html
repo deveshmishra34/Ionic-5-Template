@@ -15,7 +15,7 @@
             </div>
             <br><br>
             <div class="custom-button" #verifyBtn>
-                <ion-button [routerLink]="''" [expand]="'block'" [color]="'primary'">Verify OTP</ion-button>
+                <ion-button (click)="verifyOtp()" [expand]="'block'" [color]="'primary'">Verify OTP</ion-button>
             </div>
         </div>
         <div class="bottom-section ion-text-center" #resentMessage>

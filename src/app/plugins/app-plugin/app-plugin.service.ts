@@ -5,10 +5,11 @@ import {
     AlertController,
     LoadingController,
     MenuController,
-    ModalController,
+    ModalController, NavController,
     PopoverController
 } from '@ionic/angular';
 import {GlobalService} from '../../providers/global-service/global.service';
+import {Router} from '@angular/router';
 
 const {App} = Plugins;
 
@@ -16,6 +17,8 @@ const {App} = Plugins;
     providedIn: 'root'
 })
 export class AppPluginService {
+    // @ViewChildren(IonRouterOutlet) routerOutlets: QueryList<IonRouterOutlet>;
+
 
     lastTimeBackPress = 0;
     timePeriodToExit = 2000;
@@ -27,7 +30,9 @@ export class AppPluginService {
         private popoverController: PopoverController,
         private modalController: ModalController,
         private loadingController: LoadingController,
-        private globalService: GlobalService
+        private globalService: GlobalService,
+        private router: Router,
+        private navController: NavController
     ) {
     }
 
@@ -84,18 +89,33 @@ export class AppPluginService {
                 return {};
             }
 
-
-            // if (this.ionRouterOutlet.canGoBack()) {
-            //     this.ionRouterOutlet.pop();
-            // } else {
+            console.log('Url: ', this.router.url);
+            if (this.router.url.includes('home')) {
                 if (new Date().getTime() - this.lastTimeBackPress < this.timePeriodToExit) {
+                    // navigator['app'].exitApp();
                     App.exitApp();
-
                 } else {
                     this.globalService.showMessage('toast', {message: 'Press back again to exit App.'});
                     this.lastTimeBackPress = new Date().getTime();
                 }
-            // }
+            } else {
+                this.navController.pop();
+            }
+
+            // this.routerOutlets.forEach((outlet: IonRouterOutlet) => {
+            //         if (this.router.url.includes('home')) {
+            //             if (new Date().getTime() - this.lastTimeBackPress < this.timePeriodToExit) {
+            //                 // navigator['app'].exitApp();
+            //                 App.exitApp();
+            //             } else {
+            //                 this.globalService.showMessage('toast', {message: 'Press back again to exit App.'});
+            //                 this.lastTimeBackPress = new Date().getTime();
+            //             }
+            //         } else if (outlet.canGoBack()) {
+            //             outlet.pop();
+            //         }
+            //     }
+            // );
 
         });
     }
