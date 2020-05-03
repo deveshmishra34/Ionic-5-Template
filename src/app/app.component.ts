@@ -30,7 +30,7 @@ export class AppComponent implements OnDestroy {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
             this.globalService.addNetworkStatedListener();
-            this.listenForUserMenu();
+            // this.listenForUserMenu();
             this.listerForTokenChange();
             this.appPluginService.backButtonListener();
         });

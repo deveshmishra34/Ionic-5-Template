@@ -1,0 +1,58 @@
+<ion-content>
+    <div class="header-card">
+        <div class="ion-padding">
+            <ion-text class="ion-text-uppercase ion-padding-start">
+                <strong>My Wallet</strong>
+            </ion-text>
+        </div>
+    </div>
+    <div class="content">
+        <!--<div class="ion-text-center ion-padding-top ion-padding-bottom">-->
+            <!--<ion-text class="contest-text">Contests has started, Join now!</ion-text>-->
+        <!--</div>-->
+        <br><br>
+        <div class="ion-text-center">
+            <ion-text class="available ion-text-uppercase">Total Balance</ion-text>
+            <br><br>
+            <ion-text class="balance">
+                &#8377; 200/-
+            </ion-text>
+        </div>
+        <div class="ion-margin-top ion-text-center custom-button">
+            <ion-button class="ion-margin-top" [routerLink]="'/payment/add-money'">
+                Add Money
+                <ion-icon class="ion-margin-start" name="arrow-forward-outline"></ion-icon>
+            </ion-button>
+        </div>
+
+        <br><br>
+        <ion-grid>
+            <ion-row>
+                <ion-col [offset]="'1'" [size]="'5'">
+                    <ion-card class="ion-no-margin" [routerLink]="'/payment/add-money'">
+                        <ion-card-content>
+                            <ion-row>
+                                <ion-col class="ion-text-center">
+                                    <img width="25" src="assets/wallet/withdraw.png" alt=""><br>
+                                    <ion-text class="sub-title">Withdraw</ion-text>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+                <ion-col [size]="'5'">
+                    <ion-card class="ion-no-margin" [routerLink]="'/payment/passbook'">
+                        <ion-card-content>
+                            <ion-row>
+                                <ion-col class="ion-text-center">
+                                    <img width="25" src="assets/wallet/withdraw.png" alt=""><br>
+                                    <ion-text class="sub-title">Passbook</ion-text>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

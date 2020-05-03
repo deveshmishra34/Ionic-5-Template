@@ -1,0 +1,109 @@
+<ion-content>
+    <div class="game-card">
+        <ion-grid>
+            <ion-row>
+                <ion-col [routerLink]="''" [size]="2" class="vertical-align back-button">
+                    <ion-icon name="arrow-back-outline"></ion-icon>
+                </ion-col>
+                <ion-col [size]="2">
+                    <img width="50" src="assets/dashboard/game_icon.png" alt="">
+                </ion-col>
+                <ion-col class="vertical-align ion-justify-content-center ion-align-items-start">
+                    <ion-text class="game-title ion-text-uppercase">Angry Bird</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row class="ion-margin-top ion-margin-bottom">
+                <ion-col [offset]="'2'" class="vertical-align ion-justify-content-center ion-align-items-start">
+                    <ion-text class="game-sub-title">Double your money</ion-text>
+                </ion-col>
+            </ion-row>
+            <br><br><br>
+        </ion-grid>
+    </div>
+    <div class="content">
+        <div class="ion-text-center ion-padding-top ion-padding-bottom">
+            <ion-text class="contest-text">Contests has started, Join now!</ion-text>
+        </div>
+
+        <div class="ion-padding free-game">
+            <ion-card>
+                <ion-card-content class="ion-no-padding">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col [size]="'2'">
+                                <img width="50" src="assets/dashboard/game_icon.png" alt="">
+                            </ion-col>
+                            <ion-col [size]="'6'">
+                                <ion-text class="title">Free Game</ion-text>
+                                <br>
+                                <ion-text>26 Players</ion-text>
+                            </ion-col>
+                            <ion-col [size]="'4'" class="ion-text-right vertical-align">
+                                <ion-button [routerLink]="'/game/waiting-opponent'" [shape]="'round'" [size]="'small'">
+                                    Play
+                                    <ion-icon class="ion-margin-start" name="arrow-forward-outline"></ion-icon>
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-content>
+            </ion-card>
+        </div>
+
+        <div class="ion-padding paid-games">
+            <ion-card>
+                <ion-card-header>
+                    <div class="ion-text-center">
+                        <ion-text class="available ion-text-uppercase">Available &nbsp;: &#8377; 200/-</ion-text>
+                    </div>
+                </ion-card-header>
+                <ion-card-content class="ion-no-padding">
+                    <ion-grid class="ion-no-padding">
+                        <ion-row class="ion-margin-top">
+                            <ion-col [size]="'3'" class="vertical-align win-amount">
+                                <ion-text>Win</ion-text>
+                                <ion-text class="amount" [color]="'primary'">&#8377;20</ion-text>
+                            </ion-col>
+                            <ion-col class="ion-padding-start">
+                                <ion-text class="title">Entry &#8377; 10 &#8226; 26 Players</ion-text>
+                                <br>
+                                <ion-button [shape]="'round'" [size]="'small'">
+                                    Play
+                                    <ion-icon class="ion-margin-start" name="arrow-forward-outline"></ion-icon>
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="ion-margin-top">
+                            <ion-col [size]="'3'" class="vertical-align win-amount">
+                                <ion-text>Win</ion-text>
+                                <ion-text class="amount" [color]="'primary'">&#8377;40</ion-text>
+                            </ion-col>
+                            <ion-col class="ion-padding-start">
+                                <ion-text class="title">Entry &#8377; 10 &#8226; 26 Players</ion-text>
+                                <br>
+                                <ion-button [shape]="'round'" [size]="'small'">
+                                    Play
+                                    <ion-icon class="ion-margin-start" name="arrow-forward-outline"></ion-icon>
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="ion-margin-top">
+                            <ion-col [size]="'3'" class="vertical-align win-amount">
+                                <ion-text>Win</ion-text>
+                                <ion-text class="amount" [color]="'primary'">&#8377;60</ion-text>
+                            </ion-col>
+                            <ion-col class="ion-padding-start">
+                                <ion-text class="title">Entry &#8377; 10 &#8226; 26 Players</ion-text>
+                                <br>
+                                <ion-button [shape]="'round'" [size]="'small'">
+                                    Play
+                                    <ion-icon class="ion-margin-start" name="arrow-forward-outline"></ion-icon>
+                                </ion-button>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>

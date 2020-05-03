@@ -4,7 +4,6 @@ import {BehaviorSubject} from 'rxjs';
 import {StorageService} from '../storage/storage.service';
 import {AppUrlService} from '../../constants/app-url-service/app-url-service.service';
 import {Network, NetworkStatus} from '@capacitor/core';
-import {AppPluginService} from '../../plugins/app-plugin/app-plugin.service';
 
 @Injectable({
     providedIn: 'root'
@@ -119,5 +118,31 @@ export class GlobalService {
         });
 
         return alert.present();
+    }
+
+    async addAnimation(ele, addAfterTime: number, removeAfterTime: number, classes: string) {
+        const element = ele.el || ele.nativeElement;
+        setTimeout(() => {
+            const classList = element.classList.value;
+            element.classList += ' ' + classes;
+            // console.log('animation added: ', classList);
+            if (removeAfterTime > 0) {
+                setTimeout(() => {
+                    classList.replace(classes, '');
+                    element.classList = classList;
+                    // console.log('animation remove: ', classList);
+                }, removeAfterTime);
+            }
+        }, addAfterTime);
+    }
+
+    removeAnimation(el, removeAfterTime: number, classes: string) {
+        const classList = el.classList.value;
+        setTimeout(() => {
+            // console.log('animation remove before: ', classList);
+            classList.replace(classes, '');
+            el.classList = classList;
+            // console.log('animation remove after: ', classList);
+        }, removeAfterTime);
     }
 }

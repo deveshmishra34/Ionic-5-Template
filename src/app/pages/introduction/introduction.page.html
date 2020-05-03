@@ -1,0 +1,34 @@
+<ion-content>
+    <!--<section>-->
+        <!--<div>Block 1</div>-->
+        <!--<div>Block 2</div>-->
+        <!--<div>Block 3</div>-->
+        <!--<div>Block 4</div>-->
+    <!--</section>-->
+    <ion-grid class="full-height">
+        <ion-row class="full-height">
+            <ion-col [size]="12" class="top-section">
+                <ion-slides pager="true" [options]="slideOpts" class="sliders full-height">
+                    <ion-slide>
+                        <img src="assets/introduction/creative_1.png">
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="assets/introduction/creative_2.png">
+                    </ion-slide>
+                    <ion-slide>
+                        <img src="assets/introduction/creative_1.png">
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+            <ion-col [size]="12" class="middle-section ion-text-center vertical-align">
+                <h2 class="play-and-earn vertical-align ion-padding-bottom">Play & Earn.</h2>
+                <ion-text class="ion-padding pla-and-earn-desc" >
+                    Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed.
+                </ion-text>
+            </ion-col>
+            <ion-col [size]="12" class="bottom-section">
+                <ion-button [routerLink]="'/auth'" [expand]="'block'" [color]="'primary'">Next</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

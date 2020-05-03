@@ -1,0 +1,18 @@
+<ion-tabs (ionTabsDidChange)="tabChange($event)">
+    <ion-tab-bar slot="bottom" [color]="'light'">
+        <ion-tab-button tab="dashboard">
+            <img width="25" [src]="(selectedTab === 'dashboard') ? 'assets/home/home_active.svg': 'assets/home/home.svg'" alt="">
+            <ion-label [color]="(selectedTab === 'dashboard') ? 'primary' : ''">Dashboard</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="wallet">
+            <img width="25" [src]="(selectedTab === 'wallet') ? 'assets/home/wallet_active.svg': 'assets/home/wallet.svg'" alt="">
+            <ion-label [color]="(selectedTab === 'wallet') ? 'primary' : ''">Wallet</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="setting">
+            <img width="25" [src]="(selectedTab === 'setting') ? 'assets/home/settings_active.svg': 'assets/home/settings.svg'" alt="">
+            <ion-label [color]="(selectedTab === 'setting') ? 'primary' : ''">Settings</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+</ion-tabs>

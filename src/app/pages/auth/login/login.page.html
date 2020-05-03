@@ -1,0 +1,37 @@
+<ion-content class="ion-padding">
+    <section class="full-height">
+        <div class="top-section" #logo>
+            <img width="100" src="assets/icon/logo.png">
+        </div>
+        <br>
+        <div class="input-section">
+            <h3 class="inout-text">
+                Hi, <br>
+                Welcome back
+            </h3>
+            <br>
+            <div class="mobile-input">
+                <input placeholder="Mobile No." type="tel">
+                <img src="assets/auth/phone.png" #mobileIcon>
+                <!--<ion-icon name="phone-portrait-outline"></ion-icon>-->
+            </div>
+            <br><br>
+            <div class="custom-button">
+                <ion-button [routerLink]="'/auth/otp'" [expand]="'block'" [color]="'primary'">Login</ion-button>
+            </div>
+        </div>
+        <div class="bottom-section ion-text-center">
+            <div class="custom-button">
+                <ion-button class="facebook ion-margin-top" [routerLink]="'/auth'">
+                    <!--<ion-icon class="ion-margin-end" name="logo-facebook"></ion-icon>-->
+                    <img src="assets/auth/facebook.png" alt="">
+                    Login with Facebook
+                </ion-button>
+                <br><br>
+                <ion-text class="signup-text">
+                    Don't have an account? <ion-text [routerLink]="'/auth/signup'">SIGN UP</ion-text>
+                </ion-text>
+            </div>
+        </div>
+    </section>
+</ion-content>

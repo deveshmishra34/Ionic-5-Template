@@ -1,0 +1,39 @@
+
+
+<ion-content>
+    <section class="full-height vertical-align">
+        <ion-grid>
+            <ion-row class="ion-margin" #contestTimer>
+                <ion-col class="ion-text-capitalize ion-text-center">
+                    <ion-text class="title">Contest Starting In</ion-text>
+                    <br><br>
+                    <ion-text class="timer">{{10 | formatTime}}</ion-text>
+                </ion-col>
+            </ion-row>
+            <br><br><br>
+            <ion-row class="ion-margin" #opo1>
+                <ion-col [size]="4" [offset]="1">
+                    <img src="assets/settings/user.svg" alt="">
+                </ion-col>
+                <ion-col class="vertical-align ion-justify-content-start">
+                    <ion-text class="title">Rahul Killer</ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row class="ion-margin" #vs>
+                <ion-col class="ion-text-center">
+                    <ion-text class="title">
+                        <img width="100" src="assets/game/vs.svg" alt="">
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row class="ion-margin" #opo2>
+                <ion-col [size]="6" [offset]="2" class="vertical-align ion-justify-content-end">
+                    <ion-text class="title">Konsa Killer</ion-text>
+                </ion-col>
+                <ion-col [size]="4">
+                    <img src="assets/settings/user.svg" alt="">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </section>
+</ion-content>

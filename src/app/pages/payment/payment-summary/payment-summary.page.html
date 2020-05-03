@@ -1,0 +1,59 @@
+<ion-content>
+    <div class="header-card">
+        <div class="ion-padding">
+            <ion-icon [routerLink]="'/payment/passbook'" class="back-button ion-float-left"
+                      name="arrow-back-outline"></ion-icon>
+
+            <ion-text class="ion-text-uppercase ion-padding-start">
+                <strong>Payment Summary</strong>
+            </ion-text>
+        </div>
+    </div>
+    <div class="content">
+        <ion-grid>
+            <ion-row>
+                <ion-col [size]="'2'">
+                    <img width="80" src="assets/wallet/coin.svg" alt="">
+                </ion-col>
+                <ion-col>
+                    <ion-text class="balance">
+                        &#8377; 50
+                    </ion-text>
+                    <br><br>
+                    <ion-text >INR - Indian Rupee Currency</ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-card>
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-text class="sub-title">Type</ion-text>
+                        </ion-col>
+                        <ion-col>
+                            <ion-text>Transferable - amount</ion-text>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-text class="sub-title">Trxn - ID</ion-text>
+                        </ion-col>
+                        <ion-col>
+                            <ion-text>CME/1234567890/Transferable - amount/09873456789</ion-text>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <ion-text class="sub-title">Date</ion-text>
+                        </ion-col>
+                        <ion-col>
+                            <ion-text>27 Apr, 2020</ion-text>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

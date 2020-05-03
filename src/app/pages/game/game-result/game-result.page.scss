@@ -1,0 +1,18 @@
+section {
+  background-image: url("../../../../assets/game/bg_opponent.svg");
+  ackground-repeat: no-repeat;
+  background-size: cover;
+
+  .congrats {
+    padding: 10px 30px;
+    background: white;
+    border-radius: 25px;
+    font-size: 1.4em;
+    font-weight: bolder;
+  }
+  .title {
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: var(--ion-color-light);
+  }
+}
