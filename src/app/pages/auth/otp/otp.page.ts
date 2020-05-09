@@ -8,14 +8,14 @@ import {Router} from '@angular/router';
     styleUrls: ['./otp.page.scss'],
 })
 export class OtpPage implements OnInit {
-
     @ViewChild('verifyBtn', {static: false}) verifyBtn;
     @ViewChild('resentMessage', {static: false}) resentMessage;
-
+    defaultHref: string;
     constructor(
         private globalService: GlobalService,
         private router: Router
     ) {
+        this.defaultHref = 'auth/login';
     }
 
     ngOnInit() {

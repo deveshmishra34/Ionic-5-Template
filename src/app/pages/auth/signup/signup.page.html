@@ -1,13 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button color="primary" [defaultHref]="defaultHref"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 <ion-content class="ion-padding">
     <section class="full-height">
-        <div class="top-section">
-            <img width="100" src="assets/icon/logo.png">
+        <div class="top-section vertical-align">
+            <img width="100" src="assets/icon/logo.svg">
         </div>
-        <div class="input-section">
-            <h3 *ngIf="checkbox && !checkbox.checked" class="inout-text">
-                Hi, <br>
-                Create new account
-            </h3>
+        <div class="input-section ion-text-center">
+            <h3 *ngIf="checkbox && !checkbox.checked" class="inout-text white_text">SIGN UP</h3>
             <div class="mobile-input ion-margin-top">
                 <input placeholder="Mobile No." type="tel">
                 <img #mobileIcon width="15" src="assets/auth/phone.png">
@@ -22,22 +26,22 @@
             </div>
             <div class="ion-margin-top ion-margin-start">
                 <ion-checkbox #checkbox></ion-checkbox>
-                <ion-text class="checkbox-text ion-margin-start">Have a referral code..?</ion-text>
+                <ion-text class="checkbox-text ion-margin-start white_text">Have a referral code..?</ion-text>
             </div>
             <br>
-            <div class="custom-button" #signupBtn>
-                <ion-button [routerLink]="'/auth/otp'" [expand]="'block'" [color]="'primary'">Sing UP</ion-button>
+            <div class="vertical-align button_div" #signupBtn>
+                <ion-button shape="round" [routerLink]="'/auth/otp'" [expand]="'block'" [color]="'primary'">Sign Up</ion-button>
             </div>
         </div>
         <div class="bottom-section ion-text-center">
             <div class="custom-button">
-                <ion-button class="facebook ion-margin-top" [routerLink]="'/auth'">
+                <ion-button class="facebook ion-margin-top white_text" [routerLink]="'/auth'">
                     <!--<ion-icon class="ion-margin-end" name="logo-facebook"></ion-icon>-->
                     <img src="assets/auth/facebook.png" alt="">
                     Login with Facebook
                 </ion-button>
                 <br><br>
-                <ion-text class="signup-text">
+                <ion-text class="signup-text primary_color_text">
                     Don't have an account?
                     <ion-text [routerLink]="'/auth/signup'">SIGN UP</ion-text>
                 </ion-text>

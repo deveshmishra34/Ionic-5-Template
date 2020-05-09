@@ -11,10 +11,11 @@ export class SignupPage implements OnInit {
     @ViewChild('mobileIcon', {static: false}) mobileIcon;
     @ViewChild('userIcon', {static: false}) userIcon;
     @ViewChild('signupBtn', {static: false}) signupBtn;
-
+    defaultHref: string;
     constructor(
         private globalService: GlobalService
     ) {
+        this.defaultHref = 'auth/login';
     }
 
     ngOnInit() {
