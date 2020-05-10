@@ -1,6 +1,6 @@
 
 ion-content {
-  --background: var(--ion-color-dark);
+  --background: url('../../../assets/new_assets/main_bg.svg') 54.5%;
 
   .header-card {
     height: 35%;
@@ -17,7 +17,7 @@ ion-content {
     position: relative;
     top: -25px;
     border-top-left-radius: 25px;
-    background: var(--ion-color-dark);
+    background: url('../../../assets/new_assets/main_bg.svg') 50%;
 
     .available, .balance {
       font-size: 1.3em;
@@ -37,12 +37,18 @@ ion-content {
       .sub-title {
         font-size: 1.0em;
         font-weight: bolder;
+        @media (max-width: 320px) {
+          font-size: 0.8em;
+        }
       }
     }
   }
   .cards_div {
     position: relative;
     top: -45px;
+    @media (max-width: 320px) {
+      top: -36px;
+    }
   }
   .white_card {
     background-color: white !important;

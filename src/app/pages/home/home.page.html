@@ -1,17 +1,17 @@
-<ion-tabs (ionTabsWillChange)="tabChange($event)" #tabs>
+<ion-tabs (ionTabsDidChange)="tabChange($event)">
     <ion-tab-bar slot="bottom" [color]="'light'">
         <ion-tab-button tab="dashboard">
-            <img width="25" [src]="(selectedTab == 'dashboard') ? 'assets/home/home_active.svg': 'assets/home/home.svg'" alt="">
-            <ion-label [color]="(selectedTab == 'dashboard') ? 'primary' : 'light'">Dashboard</ion-label>
+            <img width="25" [src]="(selectedTab === 'dashboard') ? 'assets/home/home_active.svg': 'assets/home/home.svg'" alt="">
+            <ion-label [color]="(selectedTab === 'dashboard') ? 'primary' : 'light'">Dashboard</ion-label>
         </ion-tab-button>
-        <ion-tab-button tab="store">
+       <!-- <ion-tab-button tab="store">
             <img width="25" [src]="(selectedTab === 'store') ? 'assets/home/store_active.svg': 'assets/home/store.svg'" alt="">
             <ion-label [color]="(selectedTab === 'store') ? 'primary' : 'light'">Store</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="profile">
             <img width="25" [src]="(selectedTab === 'profile') ? 'assets/home/profile_active.svg': 'assets/home/profile.svg'" alt="">
             <ion-label [color]="(selectedTab === 'profile') ? 'primary' : 'light'">Profile</ion-label>
-        </ion-tab-button>
+        </ion-tab-button>-->
         <ion-tab-button tab="wallet">
             <img width="25" [src]="(selectedTab === 'wallet') ? 'assets/home/wallet_active.svg': 'assets/home/wallet.svg'" alt="">
             <ion-label [color]="(selectedTab === 'wallet') ? 'primary' : 'light'">Wallet</ion-label>

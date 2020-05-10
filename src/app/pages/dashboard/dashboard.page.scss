@@ -1,37 +1,95 @@
-.home-slider {
-  ion-slide {
-    border-radius: 25px;
-
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+    position: absolute;
+    .icon_div {
+      background-color: #787575;
+      border-radius: 0.5rem;
+      ion-icon {
+        color: white;
+        font-size: xx-large;
+        padding: 0.2rem;
+      }
+    }
     img {
-      width: 85%;
+      width: 50px;
+      @media (max-width: 375px) {
+        width: 40px;
+      }
+    }
+  }
+}
+
+ion-content {
+  --background: url('../../../assets/new_assets/main_bg.svg') 50%;
+  .home-slider {
+    margin-top: 5rem;
+    ion-slide {
       border-radius: 25px;
+
+      img {
+        width: 85%;
+        border-radius: 25px;
+        box-shadow: 0px 0px 7px 0px rgba(var(--ion-color-primary-rgb), 0.2);
+      }
     }
   }
-}
 
-.game-card {
-  .game-title {
-    font-size: 1.1em;
-    font-weight: bolder;
-    padding: 8px 0;
+  .game-card {
+    .game-title {
+      font-size: 1.1em;
+      font-weight: bolder;
+      padding: 8px 0;
+    }
+    .game-desc {
+      font-weight: 400;
+    }
   }
-  .game-desc {
-    font-weight: 400;
-  }
-}
 
-.how_to_play {
-  ion-card {
+  .how_to_play {
+    ion-card {
+      border-radius: 1rem;
+      background: rgba(var(--ion-color-light-rgb), 0.2);
+      box-shadow: none;
+      ion-card-header {
+        background: transparent;
+      }
+      ion-card-content {
+        background: transparent;
+        li {
+          color: var(--ion-color-primary);
+        }
+      }
+    }
+  }
+
+  .btn_play {
+    height: 45px;
+  }
+
+  .contact-card {
+    background-color: #575656;
     border-radius: 1rem;
-    background: rgba(var(--ion-color-light-rgb), 0.2);
     box-shadow: none;
-    ion-card-header {
-      background: transparent;
+    a {
+      text-decoration: none;
     }
-    ion-card-content {
-      background: transparent;
-      li {
-        color: var(--ion-color-primary);
+    ion-text, a {
+      font-size: smaller;
+      @media (max-width: 375px) {
+        font-size: smaller;
+      }
+      @media (max-width: 320px) {
+        font-size: x-small;
+      }
+    }
+    .icon-bg {
+      background-image: url("../../../assets/new_assets/rec_curve.svg");
+      img {
+        width: 60px;
+        @media (max-width: 320px) {
+          width: 50px;
+        }
       }
     }
   }

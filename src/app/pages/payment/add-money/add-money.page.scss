@@ -5,7 +5,7 @@ ion-header {
   }
 }
 ion-content {
-  --background: var(--ion-color-dark);
+  --background: url('../../../../assets/new_assets/main_bg.svg') 50%;
   .header-card {
     height: 35%;
     background-color: var(--ion-dark-background-color);
@@ -23,7 +23,7 @@ ion-content {
     position: relative;
     top: -25px;
     border-top-left-radius: 25px;
-    background: var(--ion-color-dark);
+    background: url('../../../../assets/new_assets/main_bg.svg') 50%;
 
     .available, .balance {
       font-size: 1.3em;
@@ -70,6 +70,13 @@ ion-content {
     .select-amount {
       position: relative;
       top: -35px;
+      ion-card {
+        ion-card-content {
+          @media (max-width: 320px) {
+            padding: 0.5rem;
+          }
+        }
+      }
     }
 
     ion-card {
@@ -80,6 +87,9 @@ ion-content {
         font-size: 1.0em;
         font-weight: bolder;
         color: white;
+        @media (max-width: 320px) {
+          font-size: 0.8em;
+        }
       }
     }
   }

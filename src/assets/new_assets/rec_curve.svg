@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="652" height="164" viewBox="0 0 652 164">
+  <defs>
+    <filter id="Rounded_Rectangle_3_copy_33" x="-57" y="-45" width="766" height="278" filterUnits="userSpaceOnUse">
+      <feOffset dy="12" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="19" result="blur"/>
+      <feFlood flood-color="#433f3c" flood-opacity="0.122"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Rounded_Rectangle_3_copy_33)">
+        <rect id="Rounded_Rectangle_3_copy_33-2" data-name="Rounded Rectangle 3 copy 33" width="652" height="164" rx="20" transform="translate(5487 3805)" fill="#575656"/>
+      </g>
+    </clipPath>
+  </defs>
+  <g id="Clip" transform="translate(-5487 -3805)" clip-path="url(#clip-path)">
+    <g id="rec_curve">
+      <path id="Shape_6_copy_2" data-name="Shape 6 copy 2" d="M5653.015,4019.51s-86.649-58.282-63.687-114.142c-.158-1.541,132.678-157.62-52.261-138.818-.158-1.541-150.081,79.319-150.081,79.319l168.937,225.146Z" fill="#f9c08f" opacity="0.2"/>
+      <path id="Shape_6_copy_3" data-name="Shape 6 copy 3" d="M5551.374,3771.558s-19.764,69.517,10.112,101.426c.459,1.14,115.562,67.808,23.9,115.1.459,1.139-96.521-6.838-96.521-6.838V3767Z" fill="#f9c08f" opacity="0.2"/>
+    </g>
+  </g>
+</svg>

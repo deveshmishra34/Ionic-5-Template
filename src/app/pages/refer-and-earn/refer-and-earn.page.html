@@ -1,38 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home/setting" color="primary"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 <ion-content>
     <div class="header-card">
-        <div class="ion-padding">
-            <ion-icon [routerLink]="'/home/setting'" class="back-button ion-float-left"
-                      name="arrow-back-outline"></ion-icon>
-
-            <ion-text class="ion-text-uppercase ion-padding-start">
-                <strong>Refer & Earn</strong>
-            </ion-text>
-        </div>
-        <!--<ion-grid class="ion-padding">-->
-        <!--<ion-row>-->
-        <!--<ion-col [size]="3" class="ion-no-padding">-->
-        <!--<img width="100" src="assets/settings/user.svg" alt="">-->
-        <!--</ion-col>-->
-        <!--<ion-col class="vertical-align ion-align-items-start ion-no-padding ion-padding-start">-->
-        <!--<ion-text class="title">John Doe</ion-text>-->
-        <!--<ion-text>+91 8888888888</ion-text>-->
-        <!--</ion-col>-->
-        <!--</ion-row>-->
-        <!--</ion-grid>-->
-    </div>
-    <div class="content ion-padding">
-        <ion-grid>
+        <ion-grid class="ion-padding ion-no-margin">
             <ion-row>
-                <ion-col>
+                <ion-col size="12" class="vertical-align ion-text-center">
+                    <ion-text class="ion-text-uppercase ion-padding-start">
+                        <strong>Refer & Earn</strong>
+                    </ion-text>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="12">
                     <img src="assets/refer-and-earn/banner.png" alt="">
                 </ion-col>
             </ion-row>
+        </ion-grid>
+    </div>
+    <div class="content ion-padding">
+        <ion-grid>
+
             <ion-row>
                 <ion-col>
                     <div class="referral-code">
                         <div class="code full-height vertical-align"> &#34;123ERT876&#34;</div>
                         <div class="action full-height vertical-align">
-                            <ion-text class="ion-text-uppercase">Copy Code</ion-text>
+                            <ion-text class="ion-text-uppercase white_text">Copy Code</ion-text>
                         </div>
                     </div>
                 </ion-col>
@@ -40,17 +38,17 @@
             <br>
             <ion-row class="ion-margin-top ion-margin-bottom">
                 <ion-col class="vertical-align">
-                    <ion-text class="title ion-text-uppercase">Share your Referral Code</ion-text>
+                    <ion-text class="title ion-text-uppercase white_text">Share your Referral Code</ion-text>
                 </ion-col>
             </ion-row>
             <ion-row class="ion-margin-top ion-margin-bottom">
                 <ion-col class="vertical-align">
-                    <ion-text class="title">Social Media</ion-text>
+                    <ion-text class="title white_text">Social Media</ion-text>
                 </ion-col>
             </ion-row>
             <ion-row class="ion-margin-top ion-margin-bottom">
                 <ion-col class="vertical-align">
-                    <ion-text>Share on Facebook & Whatsapp</ion-text>
+                    <ion-text class="white_text">Share on Facebook & Whatsapp</ion-text>
                 </ion-col>
             </ion-row>
             <ion-row>

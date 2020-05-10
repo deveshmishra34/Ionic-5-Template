@@ -19,7 +19,7 @@
                 <img src="assets/auth/phone.png">
             </div>
             <br><br>
-            <div class="ion-text-left">
+            <div>
                 <ion-text class="signup-text primary_color_text">
                     <ion-text (click)="resendOTP()">Resend OTP</ion-text>
                 </ion-text>
@@ -29,6 +29,7 @@
             <div class="button_div vertical-align" #verifyBtn>
                 <ion-button (click)="verifyOtp()" shape="round" [expand]="'block'" [color]="'primary'">Verify OTP</ion-button>
             </div>
+
         </div>
     </section>
 </ion-content>
