@@ -1,6 +1,8 @@
-ion-toolbar {
-  position: absolute;
-
+ion-header {
+  ion-toolbar {
+    position: absolute;
+  --background: transparent;
+  }
 }
 
 .game-card {
@@ -30,25 +32,27 @@ ion-toolbar {
   position: relative;
   top: -25px;
   border-top-left-radius: 25px;
-  background: #fff1f1;
+
 
   .contest-text {
     font-weight: 500;
   }
 
   ion-card {
+    background-color: var(--ion-dark-background-color);
     ion-card-header {
       border-bottom: 1px solid #ddd;
+      background-color: var(--ion-color-light);
     }
-    --background: var(--ion-color-light);
+
     border-radius: 12px;
-    box-shadow: 4px 8px 10px -3px #ddd;
+    box-shadow: none;
   }
 
   .available {
     font-size: 1.3em;
     color: #292929;
-    font-weight: bolder;
+    font-weight: 800;
   }
 
   .title {
@@ -66,12 +70,32 @@ ion-toolbar {
       padding: 8px;
       .win-amount {
         flex-direction: column;
-        background: rgba(255, 60, 60, 0.1);
+        background: rgba(118, 108, 101, 1);
         border-radius: 12px;
+        height: 10vh;
         .amount {
           font-weight: bold;
         }
       }
     }
   }
+}
+ion-button {
+  width: 100%;
+}
+
+.position_card {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  position: absolute;
+  top: 30px;
+  z-index: 99;
+  right: 38vw;
+  img {
+    width: 68px;
+  }
+}
+.main_card {
+  padding-top: 20px;
+  min-height: 11vh;
 }

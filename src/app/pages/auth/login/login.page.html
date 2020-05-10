@@ -1,14 +1,12 @@
 <ion-content class="ion-padding">
     <section class="full-height">
-        <div class="top-section" #logo>
-            <img width="100" src="assets/icon/logo.png">
+        <div class="top-section vertical-align" #logo>
+            <img width="100" src="assets/icon/logo.svg">
         </div>
         <br>
-        <div class="input-section">
-            <h3 class="inout-text">
-                Hi, <br>
-                Welcome back
-            </h3>
+        <div class="input-section ion-text-center">
+            <h3 class="inout-text white_text">Hi,</h3>
+            <h3 class="inout-text white_text">Welcome back</h3>
             <br>
             <div class="mobile-input">
                 <input placeholder="Mobile No." type="tel">
@@ -16,13 +14,13 @@
                 <!--<ion-icon name="phone-portrait-outline"></ion-icon>-->
             </div>
             <br><br>
-            <div class="custom-button">
-                <ion-button [routerLink]="'/auth/otp'" [expand]="'block'" [color]="'primary'">Login</ion-button>
+            <div class="vertical-align button_div">
+                <ion-button shape="round" [routerLink]="'/auth/otp'" [expand]="'block'" [color]="'primary'">Login</ion-button>
             </div>
         </div>
         <div class="bottom-section ion-text-center">
             <div class="custom-button">
-                <ion-button class="facebook ion-margin-top" [routerLink]="'/auth'">
+                <ion-button class="facebook ion-margin-top white_text" [routerLink]="'/auth'">
                     <!--<ion-icon class="ion-margin-end" name="logo-facebook"></ion-icon>-->
                     <img src="assets/auth/facebook.png" alt="">
                     Login with Facebook

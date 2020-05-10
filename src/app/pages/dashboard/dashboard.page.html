@@ -1,22 +1,18 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-grid>
-            <ion-row>
-                <ion-col class="ion-text-center">
-                    <img width="50" src="assets/dashboard/leader_board.png" alt="">
-                </ion-col>
-                <ion-col class="ion-text-center">
-                    <img width="45" src="assets/icon/logo.png" alt="">
-                </ion-col>
-                <ion-col class="ion-text-center">
-                    <img width="50" src="assets/dashboard/notification.png" alt="">
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+    <ion-toolbar class="black_theme_bg">
+        <ion-buttons slot="start">
+            <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons>
+            <img width="45" style="margin: auto" src="assets/icon/logo.svg" alt="">
+        </ion-buttons>
+        <ion-buttons slot="end">
+            <ion-icon style="font-size: xx-large" color="primary" name="notifications"></ion-icon>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="black_theme_bg">
     <div class="home-slider">
         <ion-slides pager="true" [options]="slideOpts" class="sliders full-height">
             <ion-slide>
@@ -31,57 +27,56 @@
         </ion-slides>
     </div>
 
-    <br>
+    <section class="how_to_play ion-margin-top ion-padding-horizontal">
+        <ion-card>
+            <ion-card-header class="ion-text-center">
+                <ion-card-title class="white_text">How To Play this Game</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="ion-no-padding">
+                <ol>
+                    <li>
+                        Lorem ipsum, or lipsum as it is sometimes known,
+                    </li>
+                    <li>
+                        Lorem ipsum, or lipsum as it is sometimes known,
+                    </li>
+                    <li>
+                        Lorem ipsum, or lipsum as it is sometimes known,
+                        is dummy text used in laying out print, graphic or web designs
+                    </li>
+                </ol>
+            </ion-card-content>
+        </ion-card>
+    </section>
     <div class="game-card">
         <div>
             <ion-grid>
                 <ion-row>
-                    <ion-col [size]="4">
-                        <img src="assets/dashboard/game_icon.png" alt="">
+                    <ion-col size="12" class="vertical-align ion-text-center ion-padding-top">
+                        <ion-title class="game-title white_text ion-text-uppercase">Injustice 2</ion-title>
                     </ion-col>
-                    <ion-col class="vertical-align ion-padding-top">
-                        <ion-text class="game-title ion-text-uppercase">Angry Bird</ion-text>
-                        <ion-text class="game-desc">Play the game & <br> earn money</ion-text>
+                    <ion-col size="12" class="vertical-align ion-text-center">
+                        <ion-text class="game-desc primary_color_text">Play the game & earn money</ion-text>
+                    </ion-col>
+                    <ion-col class="vertical-align" offset="4" size="4">
+                        <img src="assets/dashboard/game_icon.svg" alt="">
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-margin-top ion-padding-horizontal">
+                    <ion-col size="12" class="vertical-align ion-text-center">
+                            <ion-title class="game-title white_text ion-text-uppercase">Game Introduction</ion-title>
+                    </ion-col>
+                    <ion-col size="12" class="vertical-align">
+                        <ion-text class="game-desc white_text ion-text-justify">Lorem ipsum, or lipsum as it is sometimes known,
+                            is dummy text used in laying out print, graphic or web designs.
+                            The passage is attributed to an unknown typesetter in the 15th century who is thought to
+                            have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+                        </ion-text>
                     </ion-col>
                 </ion-row>
                 <ion-row class="ion-margin-top">
-                    <ion-col>
-                        <div class="game-introduction ion-padding-start">
-                            <div class="game-title ion-text-uppercase">Game Introduction</div>
-                            <div class="game-desc">Lorem ipsum, or lipsum as it is sometimes known,
-                                is dummy text used in laying out print, graphic or web designs.
-                                The passage is attributed to an unknown typesetter in the 15th century who is thought to
-                                have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
-                            </div>
-                        </div>
-                    </ion-col>
-                </ion-row>
-                <ion-row class="ion-margin-top">
-                    <ion-col>
-                        <div class="game-introduction ion-padding-start">
-                            <div class="game-title ion-text-uppercase">How To Play This Game</div>
-                            <div class="game-desc ion-margin-top">
-                                Step 1: <ion-text [color]="'primary'">Lorem ipsum, or lipsum as it is sometimes known</ion-text>
-                            </div>
-                            <div class="game-desc ion-margin-top">
-                                Step 2: <ion-text [color]="'primary'">Lorem ipsum, or lipsum as it is sometimes known,
-                                is.</ion-text>
-                            </div>
-                            <div class="game-desc ion-margin-top">
-                                Step 3: <ion-text [color]="'primary'">Lorem ipsum, or lipsum as .</ion-text>
-                            </div>
-                            <div class="game-desc ion-margin-top">
-                                Step 4: <ion-text [color]="'primary'">Lorem ipsum, or lipsum as it is sometimes known,
-                                is dummy text used in laying out print, graphic or web designs.</ion-text>
-                            </div>
-                        </div>
-                    </ion-col>
-                </ion-row>
-                <ion-row class="ion-margin-top">
-                    <ion-col>
-                        <div class="custom-button">
-                            <ion-button [routerLink]="'/game'" [expand]="'block'" [color]="'primary'">Play Now</ion-button>
-                        </div>
+                    <ion-col size="12" class="custom-button">
+                            <ion-button tappable shape="round" [routerLink]="'/game'" [expand]="'block'" [color]="'primary'">Play Now</ion-button>
                     </ion-col>
                 </ion-row>
             </ion-grid>

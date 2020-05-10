@@ -1,29 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button color="primary" [defaultHref]="defaultHref"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 <ion-content class="ion-padding">
     <section class="full-height">
-        <div class="top-section">
-            <img width="100" src="assets/icon/logo.png">
+        <div class="top-section vertical-align">
+            <img width="100" src="assets/icon/logo.svg">
         </div>
         <br>
-        <div class="input-section">
-            <h3 class="inout-text">
-                Enter OTP (36s)
-            </h3>
+        <div class="input-section ion-text-center">
+            <h3 class="inout-text white_text">Enter OTP (36s)</h3>
             <br>
             <div class="mobile-input">
                 <input placeholder="Mobile No." type="tel">
                 <img src="assets/auth/phone.png">
             </div>
             <br><br>
-            <div class="custom-button" #verifyBtn>
-                <ion-button (click)="verifyOtp()" [expand]="'block'" [color]="'primary'">Verify OTP</ion-button>
+            <div class="ion-text-left">
+                <ion-text class="signup-text primary_color_text">
+                    <ion-text (click)="resendOTP()">Resend OTP</ion-text>
+                </ion-text>
             </div>
         </div>
         <div class="bottom-section ion-text-center" #resentMessage>
-            <div>
-                <ion-text class="signup-text">
-                    Don't receive OTP?
-                    <ion-text (click)="resendOTP()">Request again</ion-text>
-                </ion-text>
+            <div class="button_div vertical-align" #verifyBtn>
+                <ion-button (click)="verifyOtp()" shape="round" [expand]="'block'" [color]="'primary'">Verify OTP</ion-button>
             </div>
         </div>
     </section>

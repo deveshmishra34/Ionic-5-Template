@@ -1,39 +1,54 @@
 
-.header-card {
-  height: 30%;
-  background-image: url("../../../assets/wallet/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  div {
-    height: 100%;
-    //background: rgba(255, 255, 255, 0.9);
-  }
-}
+ion-content {
+  --background: var(--ion-color-dark);
 
-.content {
-  position: relative;
-  top: -25px;
-  border-top-left-radius: 25px;
-  background: #fff1f1;
-
-  .available, .balance {
-    font-size: 1.3em;
-    color: #292929;
-    font-weight: bolder;
+  .header-card {
+    height: 35%;
+    background-color: var(--ion-dark-background-color);
+    color: var(--ion-color-light);
+    div {
+      height: 100%;
+      //background: rgba(255, 255, 255, 0.9);
+    }
   }
 
-  .balance {
-    font-size: 2em;
-    border-bottom: 3px solid var(--ion-color-primary);
-  }
+  .content {
 
-  ion-card {
-    --background: var(--ion-color-light);
-    border-radius: 12px;
-    box-shadow: 4px 8px 10px -3px #ddd;
-    .sub-title {
-      font-size: 1.0em;
+    position: relative;
+    top: -25px;
+    border-top-left-radius: 25px;
+    background: var(--ion-color-dark);
+
+    .available, .balance {
+      font-size: 1.3em;
+      color: #292929;
       font-weight: bolder;
+    }
+
+    .balance {
+      font-size: 2em;
+      border-bottom: 3px solid var(--ion-color-primary);
+    }
+
+    ion-card {
+      --background: #575757;
+      border-radius: 12px;
+      box-shadow: none;
+      .sub-title {
+        font-size: 1.0em;
+        font-weight: bolder;
+      }
+    }
+  }
+  .cards_div {
+    position: relative;
+    top: -45px;
+  }
+  .white_card {
+    background-color: white !important;
+    border-radius: 1rem;
+    ion-title {
+      font-size: medium;
     }
   }
 }

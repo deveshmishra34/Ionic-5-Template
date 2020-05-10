@@ -1,9 +1,10 @@
 ion-content {
+  --background: #2D2D2D;
   .top-section {
     height: 20%;
   }
   .input-section {
-    height: 70%;
+    height: 53%;
     .inout-text {
       line-height: 1.6;
       letter-spacing: 0.8px;
@@ -17,7 +18,7 @@ ion-content {
         padding: 8px 16px;
         font-size: 0.8em;
         border: none;
-        box-shadow: 5px 6px 4px -2px #d2d2d2;
+       // box-shadow: 5px 6px 4px -2px #d2d2d2;
       }
       img {
         position: absolute;
@@ -41,12 +42,23 @@ ion-content {
     }
   }
   .signup-text {
+    text-decoration: underline;
     letter-spacing: 0.8px;
     font-size: 1em;
     font-weight: 400;
-    color: #467a9d;
     ion-text {
       font-weight: 500;
     }
+  }
+  .button_div {
+    ion-button {
+      height: 6vh;
+    }
+  }
+}
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+    position: absolute;
   }
 }

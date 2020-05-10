@@ -37,7 +37,7 @@
 .custom-button {
   ion-button {
     height: 45px;
-    --border-radius: 12px;
+    --border-radius: 25px;
   }
 }
 
@@ -56,4 +56,22 @@ ion-header:after {
   justify-content: center;
   align-content: center;
   align-items: center;
+}
+.white_text {
+  color: white;
+}
+.primary_color_text {
+  color: var(--ion-color-primary);
+}
+.secondary_color_text {
+  color: var(--ion-color-secondary);
+}
+.black_theme_bg {
+  --background: #2D2D2D;
+  background: #2D2D2D;
+}
+
+ion-title {
+  padding: 0;
+  width: 100%;
 }

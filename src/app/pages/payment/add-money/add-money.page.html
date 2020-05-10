@@ -1,12 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button color="primary" defaultHref="home/wallet"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
 <ion-content>
     <div class="header-card">
-        <div class="ion-padding">
-            <ion-icon [routerLink]="'/home/wallet'" class="back-button ion-float-left" name="arrow-back-outline"></ion-icon>
-
-            <ion-text class="ion-text-uppercase ion-padding-start">
-                <strong>Add Money</strong>
-            </ion-text>
-        </div>
+        <ion-grid class="ion-padding ion-no-margin">
+            <ion-row>
+                <ion-col size="12" class="vertical-align ion-text-center">
+                    <ion-text class="ion-text-uppercase ion-padding-start">
+                        <strong>Add Money</strong>
+                    </ion-text>
+                </ion-col>
+                <ion-col offset="4" size="4">
+                    <img src="assets/wallet/new_coins.svg" alt="">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
     </div>
     <div class="content">
         <ion-grid class="select-amount ion-no-padding">
@@ -36,7 +48,7 @@
         </ion-grid>
         <br><br>
         <div class="ion-text-center ion-padding">
-            <ion-text class="balance">
+            <ion-text class="balance white_text">
                 &#8377; <input #addAmount type="tel" placeholder="250">
             </ion-text>
             <div *ngIf="checkbox && checkbox.checked" class="mobile-input ion-margin-top ion-padding">
@@ -45,7 +57,7 @@
             </div>
             <div class="ion-margin-top">
                 <ion-checkbox #checkbox></ion-checkbox>
-                <ion-text class="checkbox-text ion-padding-start">Have a promo code.?</ion-text>
+                <ion-text class="checkbox-text ion-padding-start white_text">Have a promo code.?</ion-text>
             </div>
         </div>
         <div class="ion-margin-top ion-text-center custom-button">
@@ -54,7 +66,7 @@
                 <ion-icon class="ion-margin-start" name="arrow-forward-outline"></ion-icon>
             </ion-button>
             <ion-button *ngIf="checkbox && !checkbox.checked" class="ion-margin-top" [routerLink]="'/payment/add-money'">
-                Add Money
+                Continue
                 <ion-icon class="ion-margin-start" name="arrow-forward-outline"></ion-icon>
             </ion-button>
         </div>
