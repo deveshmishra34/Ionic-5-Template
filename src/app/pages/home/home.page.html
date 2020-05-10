@@ -1,8 +1,8 @@
-<ion-tabs (ionTabsDidChange)="tabChange($event)">
+<ion-tabs (ionTabsWillChange)="tabChange($event)" #tabs>
     <ion-tab-bar slot="bottom" [color]="'light'">
         <ion-tab-button tab="dashboard">
-            <img width="25" [src]="(selectedTab === 'dashboard') ? 'assets/home/home_active.svg': 'assets/home/home.svg'" alt="">
-            <ion-label [color]="(selectedTab === 'dashboard') ? 'primary' : 'light'">Dashboard</ion-label>
+            <img width="25" [src]="(selectedTab == 'dashboard') ? 'assets/home/home_active.svg': 'assets/home/home.svg'" alt="">
+            <ion-label [color]="(selectedTab == 'dashboard') ? 'primary' : 'light'">Dashboard</ion-label>
         </ion-tab-button>
         <ion-tab-button tab="store">
             <img width="25" [src]="(selectedTab === 'store') ? 'assets/home/store_active.svg': 'assets/home/store.svg'" alt="">

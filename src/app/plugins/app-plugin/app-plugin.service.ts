@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {AppState, AppUrlOpen, Plugins} from '@capacitor/core';
 import {
     ActionSheetController,
-    AlertController,
+    AlertController, IonRouterOutlet,
     LoadingController,
     MenuController,
     ModalController, NavController,
@@ -10,6 +10,7 @@ import {
 } from '@ionic/angular';
 import {GlobalService} from '../../providers/global-service/global.service';
 import {Router} from '@angular/router';
+import {BehaviorSubject, Subject} from 'rxjs';
 
 const {App} = Plugins;
 
@@ -22,6 +23,8 @@ export class AppPluginService {
 
     lastTimeBackPress = 0;
     timePeriodToExit = 2000;
+
+    changeTab: Subject<string> = new Subject<string>();
 
     constructor(
         private menuController: MenuController,
@@ -50,7 +53,6 @@ export class AppPluginService {
 
     async backButtonListener() {
         App.addListener('backButton', async (data: AppUrlOpen) => {
-            console.log('App backButton', data);
 
             const menu = await this.menuController.getOpen();
             if (menu) {
@@ -90,7 +92,7 @@ export class AppPluginService {
             }
 
             console.log('Url: ', this.router.url);
-            if (this.router.url.includes('home')) {
+            if (this.router.url.includes('/home/dashboard')) {
                 if (new Date().getTime() - this.lastTimeBackPress < this.timePeriodToExit) {
                     // navigator['app'].exitApp();
                     App.exitApp();
@@ -98,12 +100,15 @@ export class AppPluginService {
                     this.globalService.showMessage('toast', {message: 'Press back again to exit App.'});
                     this.lastTimeBackPress = new Date().getTime();
                 }
+            } else if (this.router.url.includes('/home')) {
+                this.changeTab.next('dashboard');
+                // this.router.navigateByUrl('/home/dashboard');
             } else {
                 this.navController.pop();
             }
 
             // this.routerOutlets.forEach((outlet: IonRouterOutlet) => {
-            //         if (this.router.url.includes('home')) {
+            //         if (this.router.url.includes('/home/dashboard')) {
             //             if (new Date().getTime() - this.lastTimeBackPress < this.timePeriodToExit) {
             //                 // navigator['app'].exitApp();
             //                 App.exitApp();
