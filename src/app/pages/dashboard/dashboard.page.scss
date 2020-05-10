@@ -1,0 +1,26 @@
+.home-slider {
+  ion-slide {
+    border-radius: 25px;
+
+    img {
+      width: 85%;
+      border-radius: 25px;
+    }
+  }
+}
+
+.game-card {
+  .vertical-align {
+    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+  }
+  .game-title {
+    font-size: 1.1em;
+    font-weight: bolder;
+    padding: 8px 0;
+  }
+  .game-desc {
+    font-weight: 400;
+  }
+}

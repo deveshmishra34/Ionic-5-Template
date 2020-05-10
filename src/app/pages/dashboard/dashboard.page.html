@@ -1,0 +1,91 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col class="ion-text-center">
+                    <img width="50" src="assets/dashboard/leader_board.png" alt="">
+                </ion-col>
+                <ion-col class="ion-text-center">
+                    <img width="45" src="assets/icon/logo.png" alt="">
+                </ion-col>
+                <ion-col class="ion-text-center">
+                    <img width="50" src="assets/dashboard/notification.png" alt="">
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="home-slider">
+        <ion-slides pager="true" [options]="slideOpts" class="sliders full-height">
+            <ion-slide>
+                <img src="assets/dashboard/banner_1.png">
+            </ion-slide>
+            <ion-slide>
+                <img src="assets/dashboard/banner_1.png">
+            </ion-slide>
+            <ion-slide>
+                <img src="assets/dashboard/banner_1.png">
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <br>
+    <div class="game-card">
+        <div>
+            <ion-grid>
+                <ion-row>
+                    <ion-col [size]="4">
+                        <img src="assets/dashboard/game_icon.png" alt="">
+                    </ion-col>
+                    <ion-col class="vertical-align ion-padding-top">
+                        <ion-text class="game-title ion-text-uppercase">Angry Bird</ion-text>
+                        <ion-text class="game-desc">Play the game & <br> earn money</ion-text>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <ion-col>
+                        <div class="game-introduction ion-padding-start">
+                            <div class="game-title ion-text-uppercase">Game Introduction</div>
+                            <div class="game-desc">Lorem ipsum, or lipsum as it is sometimes known,
+                                is dummy text used in laying out print, graphic or web designs.
+                                The passage is attributed to an unknown typesetter in the 15th century who is thought to
+                                have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <ion-col>
+                        <div class="game-introduction ion-padding-start">
+                            <div class="game-title ion-text-uppercase">How To Play This Game</div>
+                            <div class="game-desc ion-margin-top">
+                                Step 1: <ion-text [color]="'primary'">Lorem ipsum, or lipsum as it is sometimes known</ion-text>
+                            </div>
+                            <div class="game-desc ion-margin-top">
+                                Step 2: <ion-text [color]="'primary'">Lorem ipsum, or lipsum as it is sometimes known,
+                                is.</ion-text>
+                            </div>
+                            <div class="game-desc ion-margin-top">
+                                Step 3: <ion-text [color]="'primary'">Lorem ipsum, or lipsum as .</ion-text>
+                            </div>
+                            <div class="game-desc ion-margin-top">
+                                Step 4: <ion-text [color]="'primary'">Lorem ipsum, or lipsum as it is sometimes known,
+                                is dummy text used in laying out print, graphic or web designs.</ion-text>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="ion-margin-top">
+                    <ion-col>
+                        <div class="custom-button">
+                            <ion-button [routerLink]="'/game'" [expand]="'block'" [color]="'primary'">Play Now</ion-button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+    </div>
+
+</ion-content>

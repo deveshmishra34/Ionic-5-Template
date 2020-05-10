@@ -1,0 +1,65 @@
+<ion-content>
+    <div class="header-card">
+        <div class="ion-padding">
+            <!--<ion-icon [routerLink]="'/home/wallet'" class="back-button ion-float-left" name="arrow-back-outline"></ion-icon>-->
+
+            <ion-text class="ion-text-uppercase ion-padding-start">
+                <strong>Settings</strong>
+            </ion-text>
+        </div>
+        <ion-grid class="ion-padding">
+            <ion-row>
+                <ion-col [size]="3" class="ion-no-padding">
+                    <img width="100" src="assets/settings/user.svg" alt="">
+                </ion-col>
+                <ion-col class="vertical-align ion-align-items-start ion-no-padding ion-padding-start">
+                    <ion-text class="title">John Doe</ion-text>
+                    <ion-text>+91 8888888888</ion-text>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div class="content ion-padding">
+        <ion-item-group>
+            <ion-item-divider>
+                <ion-label class="title">Account Settings</ion-label>
+            </ion-item-divider>
+
+            <ion-item>
+                <ion-label>Personal Information</ion-label>
+                <ion-icon name="person-outline" slot="end"></ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-label>Choose Language</ion-label>
+                <ion-icon name="language-outline"  slot="end"></ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-label>My Contest</ion-label>
+                <ion-icon name="card-outline"  slot="end"></ion-icon>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group class="ion-margin-top">
+            <ion-item-divider>
+                <ion-label class="title">Others</ion-label>
+            </ion-item-divider>
+
+            <ion-item [routerLink]="'/refer-and-earn'">
+                <ion-label>Refer & Earn</ion-label>
+                <ion-icon name="gift-outline"  slot="end"></ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-label>Contact Us</ion-label>
+                <ion-icon name="call-outline"  slot="end"></ion-icon>
+            </ion-item>
+            <ion-item>
+                <ion-label>Terms And Conditions</ion-label>
+                <ion-icon name="newspaper-outline"  slot="end"></ion-icon>
+            </ion-item>
+            <ion-item (click)="logout()">
+                <ion-label>Logout</ion-label>
+                <ion-icon name="log-out-outline"  slot="end"></ion-icon>
+            </ion-item>
+        </ion-item-group>
+    </div>
+</ion-content>

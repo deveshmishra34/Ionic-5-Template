@@ -17,11 +17,11 @@ export class StorageService {
     }
 
     setUserToken(token: string) {
-        return this.storagePluginService.set(this.TOKEN, token);
+        return localStorage.setItem(this.TOKEN, token);
     }
 
     getUserToken() {
-        return this.storagePluginService.get(this.TOKEN);
+        return localStorage.getItem(this.TOKEN);
     }
 
     setUser(user) {

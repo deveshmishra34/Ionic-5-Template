@@ -1,0 +1,84 @@
+<ion-content>
+    <div class="header-card">
+        <div class="ion-padding">
+            <ion-icon [routerLink]="'/home/wallet'" class="back-button ion-float-left"
+                      name="arrow-back-outline"></ion-icon>
+
+            <ion-text class="ion-text-uppercase ion-padding-start">
+                <strong>Passbook</strong>
+            </ion-text>
+        </div>
+    </div>
+    <div class="content ion-padding">
+        <ion-card class="select-amount ion-no-margin">
+            <ion-card-content class="ion-no-padding">
+                <ion-grid class="ion-no-padding">
+                    <ion-row>
+                        <ion-col class="ion-text-center">
+                            <div class="date-picker vertical-align ion-margin" (click)="dateFrom.open()">
+                                <img width="20" src="assets/wallet/calendar.png" alt="">&nbsp;
+                                <ion-text>{{(dateFrom && dateFrom.value) ? (dateFrom.value | date:'mediumDate') : 'Apr 27, 2020'}}</ion-text>&nbsp;
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                                <ion-datetime #dateFrom displayFormat="MM DD YY" placeholder="Select Date" [hidden]="true"></ion-datetime>
+
+                            </div>
+                        </ion-col>
+                        <ion-col class="ion-text-center" (click)="dateTo.open()">
+                            <div class="date-picker vertical-align ion-margin">
+                                <img width="20" src="assets/wallet/calendar.png" alt="">&nbsp;
+                                <ion-text>{{(dateTo && dateTo.value) ? (dateTo.value | date:'mediumDate') : 'Apr 27, 2020'}}</ion-text>&nbsp;
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                                <ion-datetime #dateTo displayFormat="MM DD YY" placeholder="Select Date" [hidden]="true"></ion-datetime>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="ion-padding-bottom">
+                        <ion-col [size]="'6'" [offset]="'3'">
+                            <div class="ion-text-center custom-button">
+                                <ion-button [routerLink]="'/payment/add-money'">
+                                    View Results
+                                    <ion-icon class="ion-margin-start" name="arrow-forward-outline"></ion-icon>
+                                </ion-button>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card class="payment-history" [routerLink]="'/payment/passbook/1234567890/payment-summary'">
+            <ion-card-content class="ion-no-padding">
+                <ion-grid class="ion-no-padding">
+                    <ion-row>
+                        <ion-col [size]="'3'" class="vertical-align win-amount">
+                            <img width="50" src="assets/wallet/added.png">
+                        </ion-col>
+                        <ion-col class="ion-padding-start vertical-align ion-justify-content-start">
+                            <ion-text class="title">&#8377; 250</ion-text>
+                        </ion-col>
+                        <ion-col class="vertical-align ion-justify-content-end">
+                            <ion-text>27 Apr, 2020</ion-text>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="payment-history" [routerLink]="'/payment/passbook/1234567890/payment-summary'">
+            <ion-card-content class="ion-no-padding">
+                <ion-grid class="ion-no-padding">
+                    <ion-row>
+                        <ion-col [size]="'3'" class="vertical-align win-amount">
+                            <img width="50" src="assets/wallet/deducted.png">
+                        </ion-col>
+                        <ion-col class="ion-padding-start vertical-align ion-justify-content-start">
+                            <ion-text class="title">&#8377; 250</ion-text>
+                        </ion-col>
+                        <ion-col class="vertical-align ion-justify-content-end">
+                            <ion-text>27 Apr, 2020</ion-text>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>

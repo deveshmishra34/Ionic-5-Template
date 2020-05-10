@@ -1,0 +1,47 @@
+<ion-content class="ion-padding">
+    <section class="full-height">
+        <div class="top-section">
+            <img width="100" src="assets/icon/logo.png">
+        </div>
+        <div class="input-section">
+            <h3 *ngIf="checkbox && !checkbox.checked" class="inout-text">
+                Hi, <br>
+                Create new account
+            </h3>
+            <div class="mobile-input ion-margin-top">
+                <input placeholder="Mobile No." type="tel">
+                <img #mobileIcon width="15" src="assets/auth/phone.png">
+            </div>
+            <div class="mobile-input ion-margin-top">
+                <input placeholder="Enter name" type="tel">
+                <img #userIcon width="20" src="assets/auth/user.png">
+            </div>
+            <div *ngIf="checkbox && checkbox.checked" class="mobile-input ion-margin-top">
+                <input placeholder="Enter Referral Code" type="tel">
+                <img width="20" src="assets/auth/gift.png">
+            </div>
+            <div class="ion-margin-top ion-margin-start">
+                <ion-checkbox #checkbox></ion-checkbox>
+                <ion-text class="checkbox-text ion-margin-start">Have a referral code..?</ion-text>
+            </div>
+            <br>
+            <div class="custom-button" #signupBtn>
+                <ion-button [routerLink]="'/auth/otp'" [expand]="'block'" [color]="'primary'">Sing UP</ion-button>
+            </div>
+        </div>
+        <div class="bottom-section ion-text-center">
+            <div class="custom-button">
+                <ion-button class="facebook ion-margin-top" [routerLink]="'/auth'">
+                    <!--<ion-icon class="ion-margin-end" name="logo-facebook"></ion-icon>-->
+                    <img src="assets/auth/facebook.png" alt="">
+                    Login with Facebook
+                </ion-button>
+                <br><br>
+                <ion-text class="signup-text">
+                    Don't have an account?
+                    <ion-text [routerLink]="'/auth/signup'">SIGN UP</ion-text>
+                </ion-text>
+            </div>
+        </div>
+    </section>
+</ion-content>

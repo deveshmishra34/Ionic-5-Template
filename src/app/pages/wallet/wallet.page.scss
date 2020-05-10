@@ -1,0 +1,39 @@
+
+.header-card {
+  height: 30%;
+  background-image: url("../../../assets/wallet/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  div {
+    height: 100%;
+    //background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.content {
+  position: relative;
+  top: -25px;
+  border-top-left-radius: 25px;
+  background: #fff1f1;
+
+  .available, .balance {
+    font-size: 1.3em;
+    color: #292929;
+    font-weight: bolder;
+  }
+
+  .balance {
+    font-size: 2em;
+    border-bottom: 3px solid var(--ion-color-primary);
+  }
+
+  ion-card {
+    --background: var(--ion-color-light);
+    border-radius: 12px;
+    box-shadow: 4px 8px 10px -3px #ddd;
+    .sub-title {
+      font-size: 1.0em;
+      font-weight: bolder;
+    }
+  }
+}

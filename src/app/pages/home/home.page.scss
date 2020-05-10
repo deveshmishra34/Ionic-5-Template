@@ -1,0 +1,14 @@
+ion-tabs {
+  background: var(--ion-background-color);
+  ion-tab-bar {
+    border: none;
+    box-shadow: 0px -6px 10px -4px #ddd;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    ion-label {
+      font-weight: 400;
+      margin-top: 2px;
+    }
+  }
+}

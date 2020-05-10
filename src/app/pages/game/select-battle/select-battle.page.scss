@@ -1,0 +1,77 @@
+ion-toolbar {
+  position: absolute;
+
+}
+
+.game-card {
+  background-image: url("../../../../assets/dashboard/banner_1.png");
+  ion-grid {
+    background: rgba(255, 255, 255, 0.9);
+    .back-button {
+      font-size: 1.5em;
+    }
+    .vertical-align {
+      flex-direction: column;
+    }
+    .game-title {
+      font-size: 1.1em;
+      font-weight: bolder;
+    }
+    .game-sub-title {
+      font-size: 1.0em;
+      font-weight: bolder;
+    }
+    .game-desc {
+      font-weight: 400;
+    }
+  }
+}
+.content {
+  position: relative;
+  top: -25px;
+  border-top-left-radius: 25px;
+  background: #fff1f1;
+
+  .contest-text {
+    font-weight: 500;
+  }
+
+  ion-card {
+    ion-card-header {
+      border-bottom: 1px solid #ddd;
+    }
+    --background: var(--ion-color-light);
+    border-radius: 12px;
+    box-shadow: 4px 8px 10px -3px #ddd;
+  }
+
+  .available {
+    font-size: 1.3em;
+    color: #292929;
+    font-weight: bolder;
+  }
+
+  .title {
+    font-size: 1.1em;
+    font-weight: bolder;
+  }
+  .sub-title {
+    font-size: 1.0em;
+    font-weight: bolder;
+  }
+
+  .paid-games {
+    ion-row {
+      border-bottom: 1px solid #ddd;
+      padding: 8px;
+      .win-amount {
+        flex-direction: column;
+        background: rgba(255, 60, 60, 0.1);
+        border-radius: 12px;
+        .amount {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
