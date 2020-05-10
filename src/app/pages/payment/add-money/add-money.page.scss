@@ -70,6 +70,13 @@ ion-content {
     .select-amount {
       position: relative;
       top: -35px;
+      ion-card {
+        ion-card-content {
+          @media (max-width: 320px) {
+            padding: 0.5rem;
+          }
+        }
+      }
     }
 
     ion-card {
@@ -80,6 +87,9 @@ ion-content {
         font-size: 1.0em;
         font-weight: bolder;
         color: white;
+        @media (max-width: 320px) {
+          font-size: 0.8em;
+        }
       }
     }
   }
