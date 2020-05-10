@@ -1,6 +1,6 @@
 
 ion-content {
-  --background: url('../../../assets/new_assets/main_bg.svg') 54.5%;
+  --background: url('../../../assets/new_assets/main_bg.svg');
 
   .header-card {
     height: 35%;
@@ -17,7 +17,7 @@ ion-content {
     position: relative;
     top: -25px;
     border-top-left-radius: 25px;
-    background: url('../../../assets/new_assets/main_bg.svg') 50%;
+    //background: url('../../../assets/new_assets/main_bg.svg') 50%;
 
     .available, .balance {
       font-size: 1.3em;
