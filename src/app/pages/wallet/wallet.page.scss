@@ -1,6 +1,6 @@
 
 ion-content {
-  --background: var(--ion-color-dark);
+  --background: url('../../../assets/new_assets/bg_opponent.svg') 50%;
 
   .header-card {
     height: 35%;
@@ -17,7 +17,7 @@ ion-content {
     position: relative;
     top: -25px;
     border-top-left-radius: 25px;
-    background: var(--ion-color-dark);
+    background: url('../../../assets/new_assets/bg_opponent.svg') 50%;
 
     .available, .balance {
       font-size: 1.3em;

@@ -1,87 +1,96 @@
-
-.header-card {
-  height: 30%;
-  background: var(--ion-color-primary);
-  color: var(--ion-color-light);
-  border-bottom-right-radius: 25px;
-  .back-button {
-    font-size: 1.5em;
-  }
-  .vertical-align {
-    flex-direction: column;
-  }
-  .title {
-    font-size: 1.2em;
-    font-weight: bolder;
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+    position: absolute;
   }
 }
-
-.content {
-  .title {
-    font-size: 1.1em;
-    font-weight: bolder;
-  }
-  .sub-title {
-    font-size: 1.0em;
-    font-weight: bolder;
-  }
-  .available, .balance {
-    font-size: 1.3em;
-    color: #292929;
-    font-weight: bolder;
-  }
-
-  .balance {
-    font-size: 2em;
-    border-bottom: 3px solid var(--ion-color-primary);
-    input {
-      width: 40%;
-      background: transparent;
-      outline: none;
-      border: none;
-      text-align: center;
-      color: var(--ion-color-primary);
+ion-content {
+  --background: var(--ion-color-dark);
+  .header-card {
+    height: 23%;
+    background-color: var(--ion-dark-background-color);
+    color: var(--ion-color-light);
+    border-bottom-right-radius: 25px;
+    .back-button {
+      font-size: 1.5em;
+    }
+    .vertical-align {
+      flex-direction: column;
+    }
+    .title {
+      font-size: 1.2em;
+      font-weight: bolder;
     }
   }
 
-  .referral-code {
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    outline: none;
-    font-size: 0.8em;
-    border: none;
-    box-shadow: 5px 6px 4px -2px #d2d2d2;
-    background: var(--ion-color-light);
-    display: flex;
-    .code {
-      width: 70%;
+  .content {
+    background: var(--ion-color-dark);
+    .title {
+      font-size: 1.1em;
+      font-weight: bolder;
+    }
+    .sub-title {
       font-size: 1.0em;
       font-weight: bolder;
     }
-    .action {
-      width: 30%;
-      background: var(--ion-color-primary);
-      border-top-right-radius: 25px;
-      border-bottom-right-radius: 25px;
-      color: var(--ion-color-light);
-      font-weight: 600;
+    .available, .balance {
+      font-size: 1.3em;
+      color: #292929;
+      font-weight: bolder;
     }
-  }
 
-  ion-button.facebook, ion-button.whatsapp {
-    --background: #4267b2;
-    font-size: 0.8em;
-    font-weight: 400;
-    letter-spacing: 0.8px;
-    img {
-      width: 6%;
-      margin-right: 6%;
+    .balance {
+      font-size: 2em;
+      border-bottom: 3px solid var(--ion-color-primary);
+      input {
+        width: 40%;
+        background: transparent;
+        outline: none;
+        border: none;
+        text-align: center;
+        color: var(--ion-color-primary);
+      }
     }
-  }
 
-  ion-button.whatsapp {
-    --background: var(--ion-color-success);
-  }
+    .referral-code {
+      width: 100%;
+      height: 50px;
+      border-radius: 25px;
+      outline: none;
+      font-size: 0.8em;
+      border: none;
+     // box-shadow: 5px 6px 4px -2px #d2d2d2;
+      background: var(--ion-color-light);
+      display: flex;
+      .code {
+        width: 70%;
+        font-size: 1.0em;
+        font-weight: bolder;
+      }
+      .action {
+        width: 30%;
+        background: var(--ion-color-primary);
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        color: var(--ion-color-light);
+        font-weight: 600;
+      }
+    }
 
+    ion-button.facebook, ion-button.whatsapp {
+      --background: #4267b2;
+      font-size: 0.8em;
+      font-weight: 400;
+      letter-spacing: 0.8px;
+      img {
+        width: 6%;
+        margin-right: 6%;
+      }
+    }
+
+    ion-button.whatsapp {
+      --background: var(--ion-color-success);
+    }
+
+  }
 }

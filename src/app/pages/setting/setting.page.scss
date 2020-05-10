@@ -5,7 +5,7 @@ ion-header {
   }
 }
 ion-content {
-  --background: var(--ion-dark-background-color);
+  --background: url('../../../assets/new_assets/bg_opponent.svg') 50%;
   .header-card {
     height: 18%;
     background: var(--ion-dark-background-color);
@@ -24,7 +24,7 @@ ion-content {
   .content {
     height: 95%;
     border-top-left-radius: 15%;
-    background: var(--ion-color-dark);
+    background: url('../../../assets/new_assets/bg_opponent.svg') 50%;
     .title {
       font-size: 1.2em;
       font-weight: bolder;

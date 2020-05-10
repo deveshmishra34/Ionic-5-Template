@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar class="black_theme_bg">
+    <ion-toolbar>
        <ion-grid>
            <ion-row>
                <ion-col size="1.5">
@@ -85,6 +85,47 @@
                 <ion-row class="ion-margin-top">
                     <ion-col size="12">
                             <ion-button class="btn_play" tappable shape="round" [routerLink]="'/game'" [expand]="'block'" [color]="'primary'">Play Now</ion-button>
+                    </ion-col>
+                </ion-row>
+
+                <ion-row>
+                    <ion-col size="12">
+                        <ion-card class="my-card contact-card">
+                            <ion-row>
+                                <ion-col size="3" class="vertical-align icon-bg ion-no-padding">
+                                    <img src="assets/new_assets/icon/vector-smart-object.png" class="contact-icon">
+                                </ion-col>
+                                <ion-col size="9" class="vertical-align ion-padding-vertical ion-justify-content-start ion-text-start">
+                                    <ion-row>
+                                        <ion-col size="12" class="no-padding-top ion-text-left">
+                                            <a class="contact-detail primary_color_text" [href]="'https://api.whatsapp.com/send?phone=91' + contactNo"><strong>Whatsapp</strong> (+91 {{contactNo}})</a>
+                                        </ion-col>
+                                        <ion-col size="12" class="no-padding-bottom no-padding-top ion-text-left">
+                                            <ion-text (click)="callUs()" class="contact-detail primary_color_text"><strong>Call Us on</strong> (+91 {{contactNo}})</ion-text>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card>
+                    </ion-col>
+                    <ion-col size="12">
+                        <ion-card class="my-card contact-card">
+                            <ion-row>
+                                <ion-col size="3" class="vertical-align icon-bg ion-no-padding">
+                                    <img src="assets/new_assets/icon/vector-smart-object.png" class="contact-icon">
+                                </ion-col>
+                                <ion-col size="9" class="vertical-align ion-padding-vertical ion-justify-content-start ion-text-start">
+                                    <ion-row>
+                                        <ion-col size="12" class="no-padding-top ion-text-left">
+                                            <ion-title color="primary">Refer & Earn</ion-title>
+                                        </ion-col>
+                                        <ion-col size="12" class="no-padding-bottom no-padding-top ion-text-left">
+                                            <ion-text  class="contact-detail white_text"><strong>Share the app and earn points</strong></ion-text>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-col>
+                            </ion-row>
+                        </ion-card>
                     </ion-col>
                 </ion-row>
             </ion-grid>
