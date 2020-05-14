@@ -26,10 +26,11 @@ const routes: Routes = [
         path: '*',
         redirectTo: '/auth'
     },
-  {
-    path: 'refer-and-earn',
-    loadChildren: () => import('./pages/refer-and-earn/refer-and-earn.module').then( m => m.ReferAndEarnPageModule)
-  }
+    {
+        path: 'refer-and-earn',
+        loadChildren: () => import('./pages/refer-and-earn/refer-and-earn.module').then(m => m.ReferAndEarnPageModule)
+    },
+
 ];
 
 @NgModule({

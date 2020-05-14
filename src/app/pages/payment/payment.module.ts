@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AddMoneyPage} from './add-money/add-money.page';
 import {PassbookPage} from './passbook/passbook.page';
 import {PaymentSummaryPage} from './payment-summary/payment-summary.page';
+import {KycPage} from './kyc/kyc.page';
 
 const routes: Routes = [
     {
@@ -14,6 +15,10 @@ const routes: Routes = [
     {
         path: 'passbook',
         component: PassbookPage
+    },
+    {
+        path: 'kyc',
+        component: KycPage
     },
     {
         path: 'passbook/:id/payment-summary',
@@ -30,7 +35,8 @@ const routes: Routes = [
     declarations: [
         AddMoneyPage,
         PassbookPage,
-        PaymentSummaryPage
+        PaymentSummaryPage,
+        KycPage
     ],
     imports: [
         CommonModule,
